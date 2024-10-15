@@ -7,6 +7,7 @@ const employeeSchema = new mongoose.Schema({
     experience: { type: String },
     salary: { type: Number },
     email: { type: String },
+    pic: {type:String},
     phone: { type: Number }
 });
 

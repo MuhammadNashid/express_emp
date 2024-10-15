@@ -7,12 +7,12 @@ console.log(id);
 
 async function getEmployees() {
 
-    const res=await fetch(`http://localhost:3001/api/getemployee/${id}`)
+    const res=await fetch(`http://localhost:3000/api/getemployee/${id}`)
     const employe=await res.json();
     console.log(employe);
     document.getElementById('main_2').innerHTML=`
      <div class="image">
-                <img src="../image/peoplelogo.png" alt="no image">
+                <img src="../images/images.png" alt="no image">
             </div>
             <div class="details">
                 <input type="text" placeholder="Employee ID" id="EmpID" name="EmpID" value="${employe.empid}" disabled="true">

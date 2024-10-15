@@ -35,13 +35,13 @@ body {
 }
 
 /* Edit field input styles */
-.editfield {
+.edit {
     display: flex;
     flex-direction: column;
     gap: 15px;
 }
 
-.editfield input[type="text"] {
+.edit input[type="text"] {
     width: 93%;
     padding: 12px;
     font-size: 20px;
@@ -50,21 +50,24 @@ body {
     text-align: center;
 }
 
-.editfield input[type="text"]:focus {
+.edit input[type="text"]:focus {
     outline: none;
     border-color: #007bff;
 }
 
 /* Button styling */
-.editfield button {
+.edit button {
     padding: 12px;
     font-size: 16px;
     background-color: #007bff;
-    color: #fff;
+  
     border: none;
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s ease;
+}
+.edit button>a{
+    color: #f4f4f4;
 }
 
 .editfield button:hover {

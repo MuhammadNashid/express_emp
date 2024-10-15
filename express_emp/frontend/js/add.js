@@ -1,3 +1,4 @@
+let pic;
 document.getElementById('frm').addEventListener('submit',async function (e) {
     e.preventDefault();
     console.log("form");
@@ -14,8 +15,8 @@ document.getElementById('frm').addEventListener('submit',async function (e) {
 
     const res=await fetch('http://localhost:3000/api/add',{
         method:"POST",
-        headers:{"Content-Type":'application/json'},
-        body:JSON.stringify({empid,name,designation,salary,experience,email,phone})
+        headers:{"content-Type":'application/json'},
+        body:JSON.stringify({empid,name,designation,salary,experience,email,phone,pic})
     })
     console.log(res);
     
@@ -31,3 +32,29 @@ document.getElementById('frm').addEventListener('submit',async function (e) {
 
     
  });
+
+
+ async function picture(){
+    const file=document.getElementById("pic").files[0]
+
+    pic=await convertBase64(file)
+    console.log(pic);
+    document.getElementById('img').src=pic
+    
+ }
+
+
+ function convertBase64(file){
+    return new Promise((resolve,reject)=>{
+        const fileReader=new FileReader();
+        fileReader.readAsDataURL(file);
+        fileReader.onload=()=>{
+
+            resolve(fileReader.result)
+        }
+
+        fileReader.onerror=(error)=>{
+            reject(error)
+        }
+    })
+ }
