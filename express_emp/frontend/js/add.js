@@ -11,7 +11,7 @@ document.getElementById('frm').addEventListener('submit',async function (e) {
     email=document.getElementById('email').value,
     phone=document.getElementById('phone').value
 
-    console.log(empid,name,designation,salary,experience,email,phone);
+    console.log(empid,name,designation,salary,experience,email,phone,pic);
 
     const res=await fetch('http://localhost:3000/api/add',{
         method:"POST",
